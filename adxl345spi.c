@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
     
     //system("python servoModded.py");
     int i;
-
+    sleep(20);
     // handling command-line arguments
 
     int bSave = 0;
