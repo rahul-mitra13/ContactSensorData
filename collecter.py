@@ -20,7 +20,7 @@ while True:
     else: #bringDown
         wiringpi.pwmWrite(18, 175)  #write PWM pulses of 175 to pin 18, rotating end onto rod
     GPIO.output(17,GPIO.LOW)
-    subprocess.run(["sudo","./adxl345spi","-t","5","-s",str(now)+"_"+str(flag)+"_"+"3.0_3200_5_.csv"])
+    subprocess.run(["sudo","./adxl345spi","-t","0.50","-s",str(now)+"_"+str(flag)+"_"+"3.0_3200_5_.csv"])
     GPIO.output(17,GPIO.HIGH)
     flag = 1 - flag
     time.sleep(180)
