@@ -24,6 +24,6 @@ while True:
     GPIO.output(17,GPIO.LOW)
     subprocess.run(["sudo","./adxl345spi","-t","1","-s",str(now)+"_"+str(flag)+"_"+"3.0_3200_1.csv"])
     GPIO.output(17,GPIO.HIGH)
-    flag = 2 - flag
+    flag = 1 - flag
     time.sleep(180)
     
