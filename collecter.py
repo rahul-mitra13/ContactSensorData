@@ -12,18 +12,16 @@ wiringpi.pwmSetClock(192)   #set clock cycle speed of pwm output
 wiringpi.pwmSetRange(2000)  #range of potential pwm pulses to pass to the servo motor
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
-flag = 1
+flag = 0
 while True:
     now = strftime("%m%d%H%M", localtime())
     if (flag == 0):#bringUp
         wiringpi.pwmWrite(18, 150)  #write PWM pulses of 150 to pin 18, rotating end off of rod
-        time.sleep(2)
     else: #bringDown
         wiringpi.pwmWrite(18, 175)  #write PWM pulses of 175 to pin 18, rotating end onto rod
-        #time.sleep(2)
     GPIO.output(17,GPIO.LOW)
     subprocess.run(["sudo","./adxl345spi","-t","1","-s",str(now)+"_"+str(flag)+"_"+"3.0_3200_1.csv"])
     GPIO.output(17,GPIO.HIGH)
-    flag = 1 - flag
+    flag = 3 - flag
     time.sleep(180)
     
