@@ -25,5 +25,5 @@ while (ctr != 400):
     ctr = ctr + 1
     GPIO.output(17,GPIO.HIGH)
     flag = 1 - flag
-    time.sleep(180)
+    time.sleep(181)
     
