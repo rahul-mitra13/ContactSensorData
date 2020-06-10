@@ -42,7 +42,7 @@ void printUsage() {
             "                      second, 1 <= FREQ <= %i (default: %i Hz) [integer]\n"
             "\n"
             "Data is streamed in comma separated format, e. g.:\n"
-            "  time,     x,     y,     z\n"
+            "  time,     x,		y,     z\n"
             "   0.0,  10.0,   0.0, -10.0\n"
             "   1.0,   5.0,  -5.0,  10.0\n"
             "   ...,   ...,   ...,   ...\n"
